@@ -8,6 +8,7 @@ var session = require('express-session');
 
 var app = express();
 require('dotenv').load();
+/*
 require('./app/config/passport')(passport);
 
 mongoose.connect(process.env.MONGO_URI);
@@ -26,6 +27,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 routes(app, passport);
+*/
 
 app.get('/', function (req, res) {
     console.log(req + "logged")
