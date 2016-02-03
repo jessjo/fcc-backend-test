@@ -31,9 +31,14 @@ app.use(passport.session());
 routes(app, passport);
 */
 
-app.get('/', function (req, res) {
-    console.log(req + "logged")
+app.get('/:query', function (req, res) {
+    console.log(req.params.query + "logged")
     res.send('GET request to homepage');
+});
+
+app.route('/')
+    .get(function(req, res) {
+      res.sendFile(process.cwd() + '/public/index.html');
 });
 
 var port = process.env.PORT || 8080;
