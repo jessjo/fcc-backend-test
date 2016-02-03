@@ -27,6 +27,11 @@ app.use(passport.session());
 
 routes(app, passport);
 
+app.get('/', function (req, res) {
+    console.log(req + "logged")
+    res.send('GET request to homepage');
+});
+
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {
 	console.log('Node.js listening on port ' + port + '...');
