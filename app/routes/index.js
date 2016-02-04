@@ -2,9 +2,9 @@
 
 module.exports = function (app) {
 app.route('/')
-  .get('/:query', function (req, res) {
-    console.log(req.params.query + "logged")
-    res.send("TEST");
+  .get(function (req, res) {
+    console.log("Index visit")
+    res.sendFile(process.cwd() + '/public/index.html');
 });
 
 };
